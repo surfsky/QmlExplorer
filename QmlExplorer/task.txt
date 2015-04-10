@@ -1,0 +1,1431 @@
+﻿------------------------------------
+target
+注：该项目有众多代码来自qt安装包，如 D:\Qt\Qt5.3.2\Examples\Qt-5.3\quick
+------------------------------------
+发布到github
+目标
+    /移动app框架、兼示例展示库
+    /将移动相关的各种示例都丢到一个项目里面去
+    /实现移动核心组件
+    /测试跨平台效果
+    /测试基于Qt的文件组织方式
+    /测试叠加各种模块后的性能
+
+部署
+    /windows
+    android
+    ios
+
+UI
+    键盘+毛玻璃效果
+    listview+loading
+    toobar 伪3d变化
+
+属性
+    附属属性
+    Screen的创建时机
+    qml property 的get 方法
+
+
+【移动组需求】
+    开源中国的qml版本demo（参考QmlCreator）
+    ios控件样式
+    复杂listview展示
+
+
+【qtmobile核心框架】（参考合并QmlCreator项目）：
+    /ICON
+    /目录浏览/菜单组织
+    /代码展示
+    /效果展示
+    /代码编辑
+    /网络地址的qml执行
+    /代码编辑器高亮、代码行指示器
+    /项目更名QmlExplorer
+    欢迎屏
+        android: 写个activity
+        ios：
+    移动版本
+    form-POST-demo
+    ---------------------
+    代码保存方案
+        engio 云存储
+        cutebin.fi 临时文件
+    发布到github
+
+优化导航栏
+    /当前行高亮效果
+    目录切换动画
+
+app
+    类似看温州的报纸阅读器
+    刮刮卡
+    开源中国
+    漫画
+    通讯录
+    动漫之家（9miao.com/news/6/64953)
+
+task
+    calendar 日期范围选择
+    如何将qml item输出为图像？
+        绘制到canvas里面去
+        用canvase导出图像
+    修复animation、effects，封装成effector
+        /阴影效果、发光效果
+        /倒影效果
+        圆角效果: 给定一个任意图片，弄成圆角: canvas/clip 示例
+        去色并上色的shader
+        ...
+    完全弄懂particle: 官方示例/quick/particles
+    app
+        刮刮卡
+        手势密码锁屏
+    /listview
+        /drawpush
+        /curd
+        /expand-item
+    彻底弄清楚插件开发步骤
+        parent
+            QQuickPaintItem
+            QObject
+            QGraphyPaintItem?
+        target
+            lib-install
+            混杂widget和qml
+                /widget 内嵌qml：参考示例quick/embededInWidget
+                /qml内嵌widget：用QGraphicsProxyWidget
+            io、widget
+            计算帧率（参考项目qmlvideofx）
+    IOS表单样式
+    如何复制已有item?
+    mupdf-qt
+    word/excel: QtActive
+
+
+
+mobile
+    contact
+    /gps
+    /camera
+    /sensors
+    /文件读写
+    /qchar
+
+ui
+    文件目录浏览器
+    多级弹出菜单
+    scroller
+
+
+难题
+    如何复制一个现有的item对象？(非Component）
+
+
+qt5.4
+    /webengine
+    /webview
+    /webkit
+
+------------------------------------
+三方插件
+------------------------------------
+三方接口
+    二维码识别
+    语音识别
+    微信
+    推送
+    统计
+    视频播放器
+
+GestureMouseArea: round/rect/trigle
+
+
+UI
+    list（下拉刷新、上拉换页）
+    actionbar
+    hud
+
+draw
+    shader（可参考视频项目）
+
+
+android
+    intend调用
+    pdf播放器
+    word、excel、ppt播放器
+    常用的一些android功能调用demo
+
+ios
+    浏览器调用
+    game center
+    webview (qt 5.4使用原生的webview嵌入)
+
+
+JsonListModel : 模拟XmlListModel，直接用ajax获取数据，并支持解析
+
+
+
+------------------------------------
+task
+------------------------------------
+基础
+    /logo
+    欢迎屏幕
+        android: 手动修改android/res/flash.xml 文件即可
+        ios:
+        windows: 放置一个定时消失的透明窗口即可
+    尺寸适配
+        /宽度适配：用好anchors和layout，控制好横向的拉伸，基本就ok
+        如何用物理距离来定义控件尺寸
+        屏幕拉伸方案（常用于游戏，可参考cocos2d-x的屏幕拉伸方案）
+           可考虑用transform属性拉伸，用clip属性剪裁
+
+
+
+
+自定义控件
+    (*)indicator 未完善
+    tabview
+    PopupMenu
+    ListViewEx
+         下拉刷新
+         上拉更多
+         /左划删除
+         点击显示更多
+    DatePicker
+         常规的“文本框+按钮+弹出日历”方式
+         mobile方式：点击弹出日历滚轴控件
+    /Keyboard
+    /datagrid
+    /pageview
+    /弹出对话框(*)
+    /mask
+    /collapse panel
+    /Tree
+    /SwipeMouseArea
+    /NestListView
+    /pageviewer：左右滑动换页（请查看views例程）
+    /sprintboard：类似苹果的桌面
+    /toast
+
+
+
+扩展
+    /qml组件(可见示例listproperties-5）
+    /c++扩展 qml 类
+    Widget程序嵌入Qml
+    与c++交互（c++代码调用qml方法或事件）
+    嵌入QWidget
+
+style
+    /切换样式示例
+    /(*)android样式（见touch）
+    ios6样式
+    ios7样式
+
+
+手势
+    /SwipeMouseArea
+    /ImageMouseArea
+    /PinchArea
+    手势识别（三角形、圆形、矩形等，游戏里用到）
+    可参考 \Qt\labs\gestures
+        QDeclarativeGestureArea
+        QGesture
+        QPanGesture
+        QPinchGesture
+        QSwipeGesture
+        QTapAndHoldGesture
+        QTapGesture
+
+数据
+    从网络获取qml并运行（做一个qml网站？手机上弄个壳，做好缓存逻辑即可？）
+    engio
+
+
+
+Key(按键处理)
+    返回键（会直接退出，查查）
+       // Implements back key navigation
+       Keys.onReleased: {
+           if (event.key === Qt.Key_Back) {
+               if (stackView.depth > 1) {
+                   stackView.pop();
+                   event.accepted = true;
+               } else { Qt.quit(); }
+           }
+       }
+    自定义键盘（enterprise版本有提供，三方代码也有）
+    激活输入法
+
+
+
+
+----------------------------------------------
+已完成
+----------------------------------------------
+/MouseArea事件识别
+    /swipe
+    /pin
+
+/自动销毁对象
+
+/手机功能调用
+    /打电话
+    /发短信
+    /发邮件
+    /手电筒
+    /加速计
+    /方向传感器
+    /相机
+    联系人
+/hud
+/左滑菜单
+/弹出菜单
+/PallaxView
+/SliderView
+
+/NestedListView
+/xml网络数据获取和解析
+/json网络数据获取和解析
+/展示（list/grid）
+
+/qml不规则区域: 用png做鼠标事件检测
+/小微的游戏
+    /贝塞尔曲线
+    /box2d
+    交互（混合canvas和Item）
+    声音
+    关卡
+    框架
+    绕环如何实现(like sonic run)
+/qt3d
+    /将qt3d的游戏跑起来（无法加载3ds）
+    /把qt3d的元素过一遍
+/canvas/path
+/dropshadow或发光效果，很不理想，太生硬
+/改造鼠标点击会动画发光按钮（用DropShadow）
+/模拟出侧拉菜单效果
+/模拟出windowsphone cell点击效果，窗体翻转显示效果
+/各种shader的示例
+/ImageMouseArea
+    /不规则图像菜单
+    /仅不透明部分可接受点击
+/恢复360demo
+/qt3d
+/绘图板，绘制直线、贝塞尔曲线
+
+/自定义按钮
+    /点击缩小
+    /悬浮发光
+    /点击发光动画
+
+
+/迁移
+    /js: 将用例也拷贝到这个目录
+    /controls：将用例也拷贝到这个目录
+    /styles：已拷贝用例
+    /images
+    /touch: 官方的touch示例
+    /shared：官方的list示例
+
+/ui
+    /动画的衔接
+    /ListLogger/
+    /HoverShineButton
+    /tabpages
+    /lightbox
+    /popup
+    /springboard: pageView + grid
+    /borderImage
+
+
+/常用组件
+    /loader
+    /connections
+    /timer
+    /ApplicationWindow
+    /systemdialog
+    /Window
+
+/常用form控件
+    /text
+    /button
+    /radiobox
+    /checkbox
+    /slider
+    /progress
+    /tab
+    /flickable
+    /flipable
+    /字体下拉框
+    /menu
+    /textarea 富文本编辑
+    /toolbar
+
+/View（视图展示和切换）
+    /页面切换（全屏切换、对话框）
+        /用loader加载qml
+        /能否直接写个js，直接加载，如Qt.load("xxx.qml")
+        /主窗体始终保留（可以没有任何东西）
+        /模态对话框
+    /stackView(基于堆栈视图切换)
+       /参考touch例程，但快速点击会重复打开窗口, if (!stackView.busy)...
+       /statckView.push(url)
+    /popup dialog(可查看示例 - qml controls/gallery)
+        main.qml
+            ChildWindow { id: window1 }
+            window1.visible = false
+        ChildWindow.qml
+            import QtQuick 2.1
+            import QtQuick.Window 2.1
+            import QtQuick.Controls 1.1
+            Window {
+                id: window1
+                width: 400
+                height: 400
+                title: "child window"
+                flags: Qt.Dialog
+                Rectangle {
+                    color: syspal.window
+                    anchors.fill: parent
+                    Label {
+                        id: dimensionsText
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        anchors.top: parent.top
+                        width: parent.width
+                        horizontalAlignment: Text.AlignHCenter
+                    }
+                }
+            }
+
+/animation
+    /basic
+    /state
+    /bahavior
+    /页面切换动画: x, particle, rotate
+
+/布局
+    /anchors 布局
+    /positioner 布局
+    /layout 布局
+
+
+/常用对象
+    /Qt
+    /Math
+    /Color
+    /Create
+    /font
+    /gradient
+    /script
+    /Screen
+
+
+/ObjectModel(stocQt例子里面有）
+/用qt 5.3框架重新搭建
+    将qml都丢到资源里面去
+    简化pro和入口c++文件
+    摆平load qml文件的问题（用QQuickView）
+    理解qrc文件的组织结构
+
+
+----------------------------------------------
+----------------------------------------------
+----------------------------------------------
+----------------------------------------------
+----------------------------------------------
+----------------------------------------------
+----------------------------------------------
+    Rectangle{
+        height:60
+        width:480
+        gradient: Gradient{
+            GradientStop {color: "red"; position: 0}
+            GradientStop {color: "white"; position: 1.0}
+        }
+    }
+    Row
+    {
+        x: 8
+        spacing: 5
+        height: 200
+        anchors.top: parent.top
+        anchors.topMargin: 21
+
+
+        Button{
+            text: "page1"
+            onClicked: {
+                loadPage("Page1.qml");
+            }
+        }
+        Button{
+            text: "page2"
+            onClicked: {
+                loadPage("Page2.qml");
+            }
+        }
+        Button{
+            text: "page3"
+            onClicked: {
+                loadPage("Page3.qml");
+            }
+        }
+        Button{
+            text: "exit"
+            onClicked: {
+                Qt.quit();
+            }
+        }
+    }
+
+import QtQuick 2.0
+import QtQuick.Controls 1.1
+import QtQuick.Layouts 1.1
+
+ApplicationWindow
+{
+    id: root
+    width:640
+    height:480
+    toolBar:ToolBar{
+        RowLayout{
+            anchors.fill: parent
+            ToolButton {
+                text: 'page1'
+                onClicked: {loadPage("Page1.qml");}
+            }
+            ToolButton {
+                text: 'page2'
+                onClicked: {loadPage("Page2.qml");}
+            }
+            ToolButton {
+                text: 'page3'
+                onClicked: {loadPage("Page3.qml");}
+            }
+            ToolButton {
+                text: 'quit'
+                onClicked: {Qt.quit();}
+            }
+        }
+    }
+
+    // 加载器
+    Loader{
+        id:pageLoader
+        anchors.fill: parent
+        anchors.topMargin: 50
+        onLoaded: {
+            busyIndicator.running = false;
+            busyIndicator.visible = false;
+        }
+    }
+
+    // 加载器
+    BusyIndicator{
+        id: busyIndicator
+        x:0
+        y:0
+        width:20
+        height:20
+        anchors.centerIn: parent.Center
+        running: false
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.verticalCenter: parent.verticalCenter
+        Rectangle{
+            anchors.fill: parent
+            border.color: 'red'
+        }
+    }
+
+    // 遮罩
+    Rectangle{
+        id:mask
+        anchors.fill: parent
+        visible:false
+        color: "#44000000"
+        Behavior on color{
+            ColorAnimation { duration: 200 }
+        }
+    }
+
+    // 首次加载page1
+    Component.onCompleted: {
+        loadPage("Page1.qml")
+    }
+
+
+    //----------------------------------
+    // js
+    //----------------------------------
+    function loadPage(url)
+    {
+        busyIndicator.visible = true;
+        busyIndicator.running = true;
+        pageLoader.source = url;
+    }
+
+    function showMask()
+    {
+        mask.visible = true;
+    }
+
+    function hideMask()
+    {
+        mask.visible = false;
+    }
+}
+onClicked: {
+    busyIndicator1.style = style1.busyIndicatorStyle;
+    button1       .style = style1.buttonStyle       ;
+    checkBox1     .style = style1.checkBoxStyle     ;
+    comboBox1     .style = style1.comboBoxStyle     ;
+    progressBar1  .style = style1.progressBarStyle  ;
+    radioButton1  .style = style1.radioButtonStyle  ;
+    slider1       .style = style1.sliderStyle       ;
+    spinBox1      .style = style1.spinBoxStyle      ;
+    statusBar1    .style = style1.statusBarStyle    ;
+    switch1       .style = style1.switchStyle       ;
+    textArea1     .style = style1.textAreaStyle     ;
+    textField1    .style = style1.textFieldStyle    ;
+    toolBar1      .style = style1.toolBarStyle      ;
+    scrollView1   .style = style1.scrollViewStyle   ;
+    tabView1      .style = style1.tabViewStyle      ;
+    tableView1    .style = style1.tableViewStyle    ;
+
+}
+onClicked: {
+    busyIndicator1.style = style4.busyIndicatorStyle;
+    button1       .style = style4.buttonStyle       ;
+    checkBox1     .style = style4.checkBoxStyle     ;
+    comboBox1     .style = style4.comboBoxStyle     ;
+    progressBar1  .style = style4.progressBarStyle  ;
+    radioButton1  .style = style4.radioButtonStyle  ;
+    slider1       .style = style4.sliderStyle       ;
+    spinBox1      .style = style4.spinBoxStyle      ;
+    statusBar1    .style = style4.statusBarStyle    ;
+    switch1       .style = style4.switchStyle       ;
+    textArea1     .style = style4.textAreaStyle     ;
+    textField1    .style = style4.textFieldStyle    ;
+    toolBar1      .style = style4.toolBarStyle      ;
+    scrollView1   .style = style4.scrollViewStyle   ;
+    tabView1      .style = style4.tabViewStyle      ;
+    tableView1    .style = style4.tableViewStyle    ;
+}
+onClicked: {
+    busyIndicator1.style = style3.busyIndicatorStyle;
+    button1       .style = style3.buttonStyle       ;
+    checkBox1     .style = style3.checkBoxStyle     ;
+    comboBox1     .style = style3.comboBoxStyle     ;
+    progressBar1  .style = style3.progressBarStyle  ;
+    radioButton1  .style = style3.radioButtonStyle  ;
+    slider1       .style = style3.sliderStyle       ;
+    spinBox1      .style = style3.spinBoxStyle      ;
+    statusBar1    .style = style3.statusBarStyle    ;
+    switch1       .style = style3.switchStyle       ;
+    textArea1     .style = style3.textAreaStyle     ;
+    textField1    .style = style3.textFieldStyle    ;
+    toolBar1      .style = style3.toolBarStyle      ;
+    scrollView1   .style = style3.scrollViewStyle   ;
+    tabView1      .style = style3.tabViewStyle      ;
+    tableView1    .style = style3.tableViewStyle    ;
+}
+onClicked: {
+    busyIndicator1.style = style2.busyIndicatorStyle;
+    button1       .style = style2.buttonStyle       ;
+    checkBox1     .style = style2.checkBoxStyle     ;
+    comboBox1     .style = style2.comboBoxStyle     ;
+    progressBar1  .style = style2.progressBarStyle  ;
+    radioButton1  .style = style2.radioButtonStyle  ;
+    slider1       .style = style2.sliderStyle       ;
+    spinBox1      .style = style2.spinBoxStyle      ;
+    statusBar1    .style = style2.statusBarStyle    ;
+    switch1       .style = style2.switchStyle       ;
+    textArea1     .style = style2.textAreaStyle     ;
+    textField1    .style = style2.textFieldStyle    ;
+    toolBar1      .style = style2.toolBarStyle      ;
+    scrollView1   .style = style2.scrollViewStyle   ;
+    tabView1      .style = style2.tabViewStyle      ;
+    tableView1    .style = style2.tableViewStyle    ;
+}
+
+
+
+    //QQmlApplicationEngine engine;
+    //engine.load(QUrl("qrc:///main.qml"));  // ok
+    //engine.load(QUrl("qml/main.qml"));  // fail
+    //engine.load(QUrl("qrc:/main.qml"));  // ok
+    //engine.load(QUrl("qrc:///touch/main.qml"));  // ok
+    //engine.load(QUrl("qrc:///pages/Page1.qml"));  // ... Component is not ready
+    //engine.load(QUrl("qrc:///demo/main.qml"));  // ... Component is not ready
+    //engine.load(QUrl("qrc:///pages/main.qml"));  // ...
+    //engine.load(QUrl("qrc:/main/page1.qml"));  // nothing
+    //engine.load(QUrl(QStringLiteral("qrc:/main.qml")));  // ok
+    //engine.load(QUrl(QStringLiteral("qrc://main.qml")));  // fail
+    //engine.load(QUrl(QStringLiteral("qrc:///main.qml")));  // ok
+    //engine.load(QUrl(QStringLiteral("qrc:/main/main.qml"))); // nothing
+    //engine.load(QUrl(QStringLiteral("qrc:/Main/main.qml")));   // crash
+    //engine.load(QUrl(QStringLiteral("qrc:/basic/TestImage.qml"))); //nothing
+    //engine.load(QUrl(QStringLiteral("qrc:/Basic/TestImage.qml"))); // nothing
+    //engine.load(QUrl(QStringLiteral("qrc:///main/main.qml"))); // fail
+
+
+    /*
+    onVisibleChanged: {
+        if (this.visible){
+            lightBox.visible = showLightBox;
+            //lightAnimation.start();
+            biggerAnimation.start();
+        }
+        else {
+            lightBox.visible = false;
+            darkAnimation.start();
+        }
+    }
+    */
+
+
+#message($$COPY)
+#message($$MKDIR)
+#message($$QMAKE_COPY)
+#message($$QMAKE_MKDIR)
+#message($$file)
+#message($$folder)
+#message($$cmdMKDIR)
+# 鏂规硶1
+# Copy other filse post build
+#win32 {
+#    DESTDIR_WIN = $${DESTDIR}
+#    DESTDIR_WIN ~= s,/,\\,g
+#    PWD_WIN = $${PWD}
+#    PWD_WIN ~= s,/,\\,g
+#    for(FILE, OTHER_FILES){
+#        QMAKE_POST_LINK += $$quote(cmd /c copy /y $${PWD_WIN}\\$${FILE} $${DESTDIR_WIN}$$escape_expand(\\n\\t))
+#    }
+#}
+#unix {
+#    for(FILE, OTHER_FILES){
+#        QMAKE_POST_LINK += $$quote(cp $${PWD}/$${FILE} $${DESTDIR}$$escape_expand(\\n\\t))
+#    }
+#}
+#export(QMAKE_POST_LINK)
+
+
+# Copies the given files to the destination directory
+#defineTest(copyToDestdir) {
+#    files = $$1
+#    for(FILE, files) {
+#        DDIR = $$DESTDIR
+#        # Replace slashes in paths with backslashes for Windows
+#        win32:FILE ~= s,/,\\,g
+#        win32:DDIR ~= s,/,\\,g
+#        QMAKE_POST_LINK += $$QMAKE_COPY $$quote($$FILE) $$quote($$DDIR) $$escape_expand(\\n\\t)
+#    }
+#    export(QMAKE_POST_LINK)
+#}
+#copyToDestdir($$OTHER_FILES)
+
+
+## LOOP COPY FOLDER FILES
+#win32 {
+#    PWD_WIN = $${PWD}
+#    DESTDIR_WIN = $${DESTDIR}
+#    PWD_WIN ~= s,/,\\,g
+#    DESTDIR_WIN ~= s,/,\\,g
+#    copyfiles.commands = $$quote(cmd /c xcopy /S /I $${PWD_WIN}\qml $$DESTDIR})
+#}
+#macx {
+#    copyfiles.commands = cp -r $$PWD/qml/* $$DESTDIR/qml
+#}
+#linux {
+#    copyfiles.commands = cp -r $$PWD/qml/* $$DESTDIR/qml
+#}
+#QMAKE_EXTRA_TARGETS += copyfiles
+#POST_TARGETDEPS += copyfiles
+
+
+#########################################
+# copy
+#########################################
+# DESTDIR MUST BE SET MANUAL
+CONFIG(release, debug|release): DESTDIR = $$OUT_PWD/release
+CONFIG(debug, debug|release):   DESTDIR = $$OUT_PWD/debug
+message($$DESTDIR)
+
+
+# 递归拷贝整个目录文件
+defineTest(copyFolder) {
+    folderFrom = $$1
+    folderTo = $$2
+    win32 {
+        folderFrom ~= s,/,\\,g
+        folderTo ~= s,/,\\,g
+        copyCmd = $$quote(xcopy /S /I $$folderFrom $$folderTo})
+    }
+    macx {
+        copyCmd = $$quote(cp -r $$folderFrom $$folderTo)
+    }
+    linux {
+        copyCmd = $$quote(cp -r $$folderFrom $$folderTo)
+    }
+    message($$copyCmd)
+    system($$copyCmd)
+}
+copyFolder($$PWD/qml $$DESTDIR/qml)
+
+
+
+
+## 将文件列表拷贝到DESTDIR目录下
+defineTest(copyFilesToDestdir) {
+    # shell command
+    win32{
+        COPY = copy /y
+        MKDIR = mkdir
+    }else{
+        COPY = cp
+        MKDIR = mkdir -p
+    }
+
+    # loop copy
+    for(fileSource, $$1){
+        # GET FILE NAME & FOLDER
+        file = $$DESTDIR/$$fileSource               #TARGET FILE PATH
+        folder = $$dirname(file)                    #TARGET FILE FOLDER
+        fileSource = $$PWD/$$fileSource             #SOURCE FILE PATH
+        win32{
+            fileSource = $$replace(fileSource, /, \\)
+            file = $$replace(file, /, \\)
+            folder = $$replace(folder, /, \\)
+        }
+
+        # MKDIR & COPY COMMAND
+        cmdMKDIR = $$MKDIR $$quote($$folder)
+        cmdCOPY  = $$COPY $$quote($$fileSource) $$quote($$file)
+        message($$cmdCOPY)
+
+        # RUN COMMAND
+        !exists($$folder):system($$cmdMKDIR)
+        system($$cmdCOPY)
+    }
+}
+copyFilesToDestdir(OTHER_FILES);
+
+    system(xcopy /S /I /Y D:\coding-qt\_code\_ui\ui.lib\smarthome\SmartHomeQt5\SmartHomeQt5\qml D:\coding-qt\_code\_ui\ui.lib\smarthome\SmartHomeQt5\build-MinGw-Debug\debug\qml)
+    system(cd $$DESTDIR)
+    system(dir)
+
+    // size（如何控制size动画的中心点）
+    ParallelAnimation{
+        id: animBig
+        PropertyAnimation {
+            target: root
+            property: 'width';
+            duration:1000
+            from: 0;
+            to: root.innerWidth
+            easing.type: Easing.OutBounce
+        }
+        PropertyAnimation {
+            target: root
+            property: 'height';
+            duration:1000
+            from: 0;
+            to: root.innerHeight
+            easing.type: Easing.OutBounce
+        }
+    }
+    ParallelAnimation{
+        id: animSmall
+        PropertyAnimation {
+            target: root
+            property: 'width';
+            duration:1000
+            from: root.innerWidth;
+            to: 0
+            easing.type: Easing.OutBounce
+        }
+        PropertyAnimation {
+            target: root
+            property: 'height';
+            duration:1000
+            from: root.innerHeight;
+            to: 0
+            easing.type: Easing.OutBounce
+        }
+    }
+
+message($$[QT_HOST_BINS])
+message($$[QT_INSTALL_BINS])
+message($$QMAKE_HOST.os)  #输出Windows
+OS = $$QMAKE_HOST.os
+equals(OS, Windows): message(win!)  #但前面的判断是否有问题，无法输出win!
+
+
+        // 用代码方式创建model
+        function createModel(parent, folder, filter)
+        {
+            delChildren(parent);
+            var txt = "
+                import QtQuick 2.0
+                import Qt.labs.folderlistmodel 2.1
+                FolderListModel {
+                    nameFilters: [" + filter + "]
+                    showDirsFirst: true
+                    showDotAndDotDot: true
+                    folder: '" + folder + "'
+                }";
+            return Qt.createQmlObject(
+                txt
+                , modelContainer
+                , "."
+                );
+       }
+       // 删除子节点
+       function delChildren(item)
+       {
+           var childrens = item.children;
+           for (var i = 0; i < children.length; i++)
+           {
+               children[i].destory();
+           }
+       }
+
+--------------------------------------------------------
+
+
+
+
+    Text{text: '使用Canvas实现线性渐变、放射渐变、椎体渐变'}
+    Row{
+        spacing: 10
+        Rectangle {
+            width: 80; height: 80
+            Canvas{
+                anchors.fill: parent
+                onPaint: {
+                    var ctx = getContext("2d")
+                    var gradient = ctx.createLinearGradient(0,0,parent.width,parent.height)
+                    gradient.addColorStop(0, "blue")
+                    gradient.addColorStop(0.5, "lightsteelblue")
+                    gradient.addColorStop(1, "white")
+                    ctx.fillStyle = gradient
+                    ctx.fillRect(0, 0, parent.width, parent.height)
+                }
+            }
+        }
+        Rectangle {
+            width: 80; height: 80
+            Canvas{
+                anchors.fill: parent
+                onPaint: {
+                    var ctx = getContext("2d")
+                    var gradient = ctx.createRadialGradient(
+                                parent.width/2, parent.height/2, 0,
+                                parent.width/2, parent.height/2, parent.width*1.5
+                                )
+                    gradient.addColorStop(0, "blue")
+                    gradient.addColorStop(0.5, "lightsteelblue")
+                    gradient.addColorStop(1, "white")
+                    ctx.fillStyle = gradient
+                    ctx.fillRect(0, 0, parent.width, parent.height)
+                }
+            }
+        }
+        Rectangle {
+            width: 80; height: 80
+            Canvas{
+                anchors.fill: parent
+                onPaint: {
+                    var ctx = getContext("2d")
+                    var gradient = ctx.createConicalGradient(
+                                parent.width/2, parent.height/2, 360
+                                )
+                    gradient.addColorStop(0, "blue")
+                    gradient.addColorStop(0.5, "lightsteelblue")
+                    gradient.addColorStop(1, "white")
+                    ctx.fillStyle = gradient
+                    ctx.fillRect(0, 0, parent.width, parent.height)
+                }
+            }
+        }
+    }
+
+        //----------------------------------
+        // 绑定到字符串数组
+        //----------------------------------
+        ListView{
+            id: lvImage
+            width: 420
+            height: 600
+            clip: true
+            orientation: ListView.Horizontal
+            snapMode: ListView.SnapOneItem
+            delegate: Item{
+                width: 420
+                height: 600
+                ImageWithLoading{
+                    anchors.centerIn: parent
+                    source: modelData;
+                    width: 400
+                    height: 600
+                    cache: true
+                }
+            }
+            Component.onCompleted: {
+                model = [
+                    "http://a5.mzstatic.com/us/r30/Purple6/v4/eb/82/ef/eb82ef19-220d-225b-1bd1-9dc62740eda6/screen1136x1136.jpeg",
+                    "http://a3.mzstatic.com/us/r30/Purple4/v4/11/1e/56/111e5679-457e-769f-aaf6-6e5e72b7a549/screen1136x1136.jpeg",
+                    "http://a2.mzstatic.com/us/r30/Purple4/v4/43/15/03/4315031a-8157-74a7-751f-83d86da35e12/screen1136x1136.jpeg",
+                    "http://a4.mzstatic.com/us/r30/Purple4/v4/d0/00/37/d000376c-e988-cc2c-aa77-b9b5dcf99cf5/screen1136x1136.jpeg",
+                    "http://a5.mzstatic.com/us/r30/Purple4/v4/69/16/fc/6916fc7e-da18-a363-fcf5-96eb13e7238b/screen1136x1136.jpeg"
+                ];
+            }
+        }
+
+        //----------------------------------
+        // 绑定到model<-数组（失败）
+        // listmodel.append一个字符串数组有问题
+        //----------------------------------
+        ListView{
+            id: lvImage2
+            width: 420
+            height: 600
+            clip: true
+            orientation: ListView.Horizontal
+            snapMode: ListView.SnapOneItem
+            delegate: Item{
+                width: 420
+                height: 600
+                /*
+                ImageWithLoading{
+                    anchors.centerIn: parent
+                    source: modelData;
+                    width: 400
+                    height: 600
+                    cache: true
+                }
+                */
+                Text {text: modelData; anchors.centerIn: parent}
+            }
+
+            model: model2
+        }
+        ListModel{
+            id: model2
+            Component.onCompleted: {
+                append([
+                           "http://a5.mzstatic.com/us/r30/Purple6/v4/eb/82/ef/eb82ef19-220d-225b-1bd1-9dc62740eda6/screen1136x1136.jpeg",
+                           "http://a3.mzstatic.com/us/r30/Purple4/v4/11/1e/56/111e5679-457e-769f-aaf6-6e5e72b7a549/screen1136x1136.jpeg",
+                           "http://a2.mzstatic.com/us/r30/Purple4/v4/43/15/03/4315031a-8157-74a7-751f-83d86da35e12/screen1136x1136.jpeg",
+                           "http://a4.mzstatic.com/us/r30/Purple4/v4/d0/00/37/d000376c-e988-cc2c-aa77-b9b5dcf99cf5/screen1136x1136.jpeg",
+                           "http://a5.mzstatic.com/us/r30/Purple4/v4/69/16/fc/6916fc7e-da18-a363-fcf5-96eb13e7238b/screen1136x1136.jpeg"
+                       ]);
+            }
+        }
+
+
+import QtQuick 2.2
+import QtQuick.Window 2.1
+import QtQuick.Controls 1.2
+import QtQuick.Layouts 1.1
+import QtQuick.Controls.Styles 1.2
+
+
+/**
+下拉刷新和上拉分页逻辑（用gif标志）
+    /下拉刷新
+        /顶部放个下拉刷新图标（可根据下拉程序显示不同的图片动画）
+        /下拉刷新
+        /回弹
+        loading效果
+    上拉分页
+        底部放上拉加载文字
+        上拉加载数据
+        loading效果
+    封装成组件
+        剥离出事件
+        可设置下拉刷新图片
+BUG
+    下拉太远
+    busyindicator不显示
+    首次的more莫名其妙
+
+TIP
+    试试qt5.4新属性 headerPositioning, footerPositioning
+
+相关的事件和属性
+    属性
+        contentY 内容Y坐标。当前显示的内容左上角在整个内容区中的坐标。往上拉该值是正数
+        originY ：第一个元素的y坐标（通常为0，如果有header的话，该值为-headerItem.height）
+    事件
+        movementStarted: 手指按下，并开始移动
+        flickStarted: 若移动很快，手指放开后还根据惯性继续滑动
+        flickEnded: 惯性滑动停止
+        movementEnded: 完全静止
+*/
+Rectangle {
+    id: root;
+    width: 320;
+    height: 480;
+
+    property bool needReflesh : false;
+    property bool needLoadMore : false;
+
+
+    //-----------------------------------------
+    // listview
+    //-----------------------------------------
+    ListView {
+        id: lv;
+        z: 1;
+        anchors.fill: parent;
+        focus: true;
+        activeFocusOnTab: true;
+
+
+        // 数据和显示
+        model: dynamicModel;
+        delegate: listDelegate;
+        highlight: Rectangle {
+            color: "steelblue";
+            opacity: 0.5
+        }
+
+        /*
+        // 下拉刷新和上拉分页逻辑
+        onMovementEnded: {
+            console.log("movementEnded: originY:" + originY + ", contentY:" + contentY);
+            // 刷新
+            if (root.needReflesh){
+                dynamicModel.reflesh();
+                root.needReflesh = false;
+            }
+            // 加载新数据
+            if (root.needLoadMore){
+                dynamicModel.loadMore();
+                root.needLoadMore = false;
+            }
+
+            // 拖动过小自动隐藏
+            if (contentY<0 && -contentY <= lv.headerItem.height)
+                contentY = 0;
+        }
+
+        onContentYChanged: {
+            // 下拉刷新判断逻辑：已经到头了，还下拉一定距离
+            if (contentY < originY){
+                var dy = contentY - originY;
+                if (dy > 40){
+                    needReflesh = true;
+                }
+            }
+            // 上拉加载判断逻辑：已经到底了，还上拉一定距离
+            if (contentY-originY > contentHeight-height){
+                var dy = (contentY-originY) - (contentHeight-height);
+                console.log("y: " + contentY + ", dy: " + dy);
+                if (dy > 40){
+                    needLoadMore = true;
+                }
+            }
+        }*/
+
+        // 下拉刷新区域
+        header : Item{
+            width: parent.width
+            height: 40
+            clip: true
+            /*
+            function goState(name){
+                if (name == '')           imgHead.source = './images/arrow-down-24.png';
+                else if (name == 'ready') imgHead.source = './images/arrow-up-24.png';
+                else if (name == 'load')  imgHead.source = './images/loading-32.gif';
+                else if (name == 'ok')    imgHead.source = './images/ok-24.png';
+            }
+            */
+            AnimatedImage {
+                id: imgHead;
+                source: "./images/arrow-down-24.png"
+                playing: true
+                anchors.centerIn: parent
+                visible: true
+            }
+        }
+
+        /*
+        // 动画
+        Behavior on contentY{
+            NumberAnimation { duration: 200; easing.type: Easing.InOutQuad }
+        }
+        // 模型修改后停止加载动画
+        onModelChanged: {
+            //lv.headerItem.goState('ok');
+            console.log('model changed')
+        }
+        // 定位到第一个元素（不显示header）
+        Component.onCompleted: contentY=0;
+        */
+
+    }
+
+    //-----------------------------------------
+    // model
+    //-----------------------------------------
+    ListModel{
+        id: dynamicModel;
+        Component.onCompleted: reflesh();
+        function reflesh(){
+            console.log("reflesh");
+            dynamicModel.clear();
+            appendData(20, 0);
+            lv.contentY = 0;
+            lv.onModelChanged();
+        }
+        function loadMore(){
+            console.log("more");
+            var n = dynamicModel.count;
+            appendData(n, n);
+            lv.onModelChanged();
+        }
+        function appendData(n, initCnt){
+            lv.headerItem.busy = true;
+            for (var i = 0 ; i < n ; ++i) {
+                append({"index": i+initCnt, "content": "Item " + (i + initCnt)})
+            }
+        }
+    }
+
+    //-----------------------------------------
+    // delegate
+    //-----------------------------------------
+    Component {
+        id: listDelegate;
+        Text {
+            id: wrapper;
+            width: parent.width;
+            height: 32;
+            font.pointSize: 15;
+            verticalAlignment: Text.AlignVCenter;
+            horizontalAlignment: Text.AlignHCenter;
+            text: content;
+            color: ListView.view.currentIndex == index ? "white" : "#505050";
+            MouseArea {
+                anchors.fill: parent;
+                onClicked:  wrapper.ListView.view.currentIndex = index;
+            }
+        }
+    }
+}
+
+        Rectangle{
+            id: panInsight
+            width: parent.width/4
+            height: parent.height
+            clip: true
+            //Behavior on width {
+            //    PropertyAnimation{easing.type: Easing.OutExpo}
+            //}
+            Rectangle{
+                width: parent.width
+                height: 30
+                color: '#f0f0f0'
+                Button{
+                    text: 'insight'
+                    anchors.verticalCenter: parent.verticalCenter
+                    onClicked: showInsight();
+                }
+            }
+            TextArea {
+                id: tf
+                anchors.fill: parent
+                anchors.topMargin: 30
+                wrapMode: Text.NoWrap
+            }
+            function showInsight(){
+                tf.text = Qml.getChildrenString(containerQml, 0);
+            }
+        }
+
+
+import QtQuick 2.0
+
+
+
+/**
+渐变组件（使用Cavas实现任意方向的渐变）
+*/
+Canvas{
+    property point start : "0,0"
+    property point end   : Qt.point(parent.width, parent.height)
+
+    // 无法用default修饰符来简化，why？
+    property list<GradientStop> stops :[
+        GradientStop { position: 0.0; color: "blue" },
+        GradientStop { position: 1.0; color: "red" }
+    ]
+
+
+    /*
+    // 方式2也可以实现
+    property Gradient gradient : Gradient {
+        GradientStop { position: 0.0; color: "lightsteelblue" }
+        GradientStop { position: 1.0; color: "blue" }
+    }
+    */
+
+
+    anchors.fill: parent
+    onPaint: {
+        var ctx = getContext("2d")
+        var gradient = ctx.createLinearGradient(start.x, start.y, end.x, end.y);
+        for (var i=0; i<stops.length; i++)
+        {
+            var stop = stops[i];
+            //console.log(stop);
+            gradient.addColorStop(stop.position, stop.color);
+        }
+        /*
+        var children = gradient.stops
+        for (var i=0; i<children.length; i++)
+        {
+            var stop = children[i];
+            console.log(stop);
+            gradient.addColorStop(stop.position, stop.color);
+        }*/
+
+        ctx.fillStyle = gradient
+        ctx.fillRect(0, 0, parent.width, parent.height)
+    }
+}
+// 获取色块中心点位置
+function getBlockCenter(block){
+    return Qt.point((block.x+0.5)*dw, (block.y+0.5)*dh);
+}
+
+    // 找到位置对应的色彩
+    function getColor(x, y){
+        var block = getBlock(x, y);
+        var c = palette[block.x][block.y];
+        var hsl = rgbToHsl(c.r, c.g, c.b);
+        logColor(c, hsl, Qt.point(x, y), block);
+        return c;
+    }
+
+        /*
+        // 色彩锚点（头）
+        Rectangle{
+            property int stopId: 0;
+            width: 20
+            height: parent.height
+            x:-width/2
+            color: 'green'
+            radius: width/2
+            border.color: 'white'
+            border.width: 1
+            MouseArea{
+                anchors.fill: parent
+                onClicked: {
+                    root.currentStop = parent;
+                    colorDialog.sender = parent;
+                    colorDialog.color = parent.color;
+                    colorDialog.open();
+                    mouse.accepted = false;
+                }
+            }
+        }
+        // 色彩锚点
+        Rectangle{
+            id: rect1
+            property int stopId: 1;
+            width: 20
+            height: parent.height
+            x: parent.width*2/3
+            color: root.gradient.stops[stopId].color
+            radius: width/2
+            border.color: 'white'
+            border.width: 1
+            MouseArea{
+                anchors.fill: parent
+                drag.target: parent;
+                drag.axis: Drag.XAxis;
+                drag.minimumX: -100;
+                drag.maximumX: stoperPanel.width+100
+                onClicked: {
+                    root.currentStop = parent;
+                    colorDialog.sender = parent;
+                    colorDialog.color = parent.color;
+                    colorDialog.open();
+                    mouse.accepted = false;
+                }
+            }
+            onXChanged: {
+                if (x < -width/2 || x>stoperPanel.width)
+                    root.gradient.stops[stopId].destory();
+                else
+                    root.gradient.stops[stopId].position = (x+width/2)/root.width;
+                bg.requestPaint();
+            }
+        }
+        // 色彩锚点（尾）
+        Rectangle{
+            property int stopId: 2;
+            width: 20
+            height: parent.height
+            x: parent.width-width/2
+            color: root.gradient.stops[stopId].color
+            radius: width/2
+            border.color: 'white'
+            border.width: 1
+            MouseArea{
+                anchors.fill: parent
+                onClicked: {
+                    root.currentStop = parent;
+                    colorDialog.sender = parent;
+                    colorDialog.color = parent.color;
+                    colorDialog.open();
+                    mouse.accepted = false;
+                }
+            }
+        }
+        */
+        //console.log(Common.getChildrenString(root, 0));
+        //Common.printItemAll(root);
+
+
+    /*
+    function addStop(position, color){
+        var n = stops.length;
+        var o = Qt.createQmlObject('import QtQuick 2.0; GradientStop{}', stopContainer, "qml");
+        o.position = position;
+        o.color = color;
+        stops.length++;
+        stops[n++] = o;
+        //stops.append(o);
+        console.log('add stop: {position:' + position + ', color:' + color + "} " + o + ", parent=" + o.parent);
+        console.log(stops.length);
+    }
+    */
+
+
+    // 将gradient数组输出为Gradient组件
+    function getGradientObject(){
+        Common.clearChildren(stopContainer);
+        var txt = 'import QtQuick 2.0; Gradient {';
+        for (var i=0; i<stops.length; i++){
+            var stop = stops[i];
+            txt += 'GradientStop { position: ' + stop.position + '; color: "' + stop.color + '"}';
+        }
+        txt += '}';
+        var o = Qt.createQmlObject(txt, stopContainer, 'qml');
+        return o;
+    }
+
+    function logStops(){
+        for (var i=0; i<stops.length; i++){
+            var stop = stops[i];
+            console.log('i=' + i + ', position=' + stop.position + ', c=' + stop.color);
+        }
+    }
+
+                    //logStops();

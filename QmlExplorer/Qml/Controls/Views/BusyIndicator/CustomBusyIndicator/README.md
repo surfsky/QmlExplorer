@@ -1,0 +1,1 @@
+See http://blog.lasconic.com/a-customized-busy-indicator-in-qt-quick

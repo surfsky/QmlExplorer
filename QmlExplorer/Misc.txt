@@ -1,0 +1,45 @@
+QString path = QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation).first();
+settings = new QSettings(path.append("/todo1-2-3.ini"), QSettings::IniFormat);
+
+
+
+
+    QQmlEngine engine;  // 获取上下文
+    QQmlComponent c(&engine, url);
+    QObject *obj = c.create();
+    QWindow *window = qobject_cast<QWindow *>(obj);
+    if (NULL == window ) {
+        QQuickView view;
+        view.setSource(url);
+        view.setResizeMode(QQuickView::SizeRootObjectToView);
+        view.show();
+    }
+    else
+        window->show();
+
+
+    // 方法1：用QQmlApplicationEngine来加载基于ApplicationWindow的文件
+    //QQmlApplicationEngine engine;
+    //engine.load(QUrl("qrc:///touch/main.qml"));
+
+    // 方法2：用QQuickView加载基于item的qml文件
+    //QQuickView view;
+    //view.setSource(QUrl("./qml/Animation/TestAnimation.qml"));
+    //view.setSource(QUrl("ASSERT:///qml/UI/Popup/TestDialog_Custom.qml"));  // android
+    //view.setSource(QUrl("./qml/UI/Popup/TestDialog_Custom.qml"));
+    //view.setResizeMode(QQuickView::SizeRootObjectToView);
+    //view.show();
+
+
+    // 方法3：用QQmlComponent来加载qml文件（基于ApplicationWindow)
+    //QQmlComponent cmpt(&engine, QUrl("qrc:///touch/main.qml"));  // 基于ApplicationWindow/Window
+    //cmpt->create();
+
+
+    // 方法4：用QQmlComponent来加载qml文件（基于Item，并用QQuickWindow加载）
+    //QQmlComponent cmpt(&engine, QUrl("./qml/Animation/TestAnimation.qml"));  // 啥也没有（可能还要用QQuickView来封装）
+    //QObject *o = cmpt.create();
+    //QWindow *window = qobject_cast<QWindow *>(o);  //
+    //window->show();
+
+

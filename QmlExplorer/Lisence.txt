@@ -1,0 +1,7 @@
+/**
+Author: surfsky.cnblogs.com 2015-02
+Lisence: MIT, 请保留本文档说明
+Usage:
+History:
+    2015-01-01, create, surfsky.cnblogs.com
+*/

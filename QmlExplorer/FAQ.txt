@@ -1,0 +1,194 @@
+------------------------------------
+BUG
+------------------------------------
+GradientLinera/GradientRadial
+    的参数end无效
+
+项目文件带来的问题
+    手工编辑就是最大的问题
+    pro文件中有中文的话就无法编辑
+        只能用其他编辑器手工修改
+    部署时找不到qml文件，调用失败。
+        修改pro文件，将qml目录都导出到assert中去
+        或将qml等文件加到资源文件里面去进行编译
+
+
+QtCreator优化
+    问题
+        无法批量删除
+        无法改文件目录
+        无法移动文件
+        修改文件名称后，对应的pro文件并不会自动改变
+    建议
+        qrc管理方式：能否变为传统的文件夹方式，易读易用，平面的非常长
+        QML目录：能否废除？只能放qml，关联的js、image都无法查看，很不方便
+        能否合并资源、QML、其他文件目录，用传统文件夹方式管理，右侧可加个小图标，表示是否编译到二进制中
+
+
+QML组件问题
+    /ObjectModel 死活不认，无法解析通过。qt 5.3可通过。但无法智能识别。
+    /文字显示乱码问题：中英文混合。详见示例ui/basic/testfont2.qml。qt 5.3已经解决这个问题
+    /Gradient很弱，只能线性，方向固定（上到下）。高级的绘图功能要用canvas来实现
+    /Switch 无法智能识别，但可以编译通过
+    文字模糊问题: 必须找到合适的字体和合适的分辨率；但默认的combobox没有这个问题。
+    Font组件无法用qml创建，以下代码是通不过的
+        property font  fontNormal : Font{
+            pixelSize: 12
+            bold: false
+            italic: false
+            family: '微软雅黑'
+        }
+    无法定义json类型的属性
+        property var someJson: {x:5, y:1}     // fail（匿名对象不行）
+        property var someArray: [{x:5, y:1}]  // ok（list对象可以）
+    Component组件非常奇怪
+        - 为什么不作为所有Quick的基类
+            component只是作为代码的容器，可以看成是一个qml文件
+            要转化为object才能在运行时使用，它不是什么人的基类
+            qml可视元素的基类是Item，不可视元素的基类是QtObject
+        - 为什么用外部属性的方式来受理组件的生命周期，如
+            Rectangle{
+                ...
+                Component.onCompleted: {...}
+            }
+            直接是这样多简洁和好理解
+            Rectangle{
+                ...
+                onCompleted: {...}
+            }
+            建议Component和Item合并掉
+    众多的代理传递的参数不知，只能查帮助文档，如
+        TableView.itemDelegate.styleData
+
+其它
+    Qt代码中使用了过多的宏，可读性很差，这也是c/c++ coder的通病，能不用尽量别用
+    编译生成的目录不在项目内部（如bin目录），而是与项目目录平行，且目录太长了
+    应用程序图标的设置还是很神秘，为什么不直接提供窗体来简化设置
+    文字在手机上会自动调整大（可能用的是pt单位）,而其他元素都是用pixel
+
+
+智能提示失效
+    Qt.platform.os
+    Switch
+    ScrollViewStyle
+    ObjectModel
+    Calendar
+
+
+------------------------------------
+FAQ
+------------------------------------
+如何用代码复制已有的QML对象？
+
+
+QML性能优化
+    http://doc-snapshot.qt-project.org/5.0/qtquick-performance.html
+
+/循环事件引用如何处理
+    如
+        property var a;
+        onAChanged: b=xxx;
+        property var b:
+        onBChanged: a=xxx;
+        遇到这种情况，逻辑会很奇怪，也不会报错
+    解决
+        废除掉一个属性变更事件，用方法替代
+        property var a;
+        onAChanged: b=xxx;
+        property var b:
+        function changeB(){a=xxx;}
+
+
+/loader 组件用失败时该如何处理？
+    监控 onStatusChanged 事件
+/如何使用Qt3D（使用三方类库）
+    qt3d 要用控制台编译
+/Qt5.2.1或其他版本运行Qt Quick2程序会发生错误
+    getProcAddress: Unable to resolve 'glCreateProgram'
+    getProcAddress: Unable to resolve 'glCreateProgramARB'
+    getProcAddress: Unable to resolve 'glCreateProgramObject'
+    在使用Qt quick2或者与图形加速的时候都可能出现这种情况，Qt5是使用OpenGL加速的，所以显卡必须支持OpenGL2.0及以上版本，而且显卡驱动也要正确，现在显卡一般都支持OpenGL，如果显卡是支持OpenGL2.0，驱动也要支持OpenGL2.0,，就是驱动不好弄，找不到支持OpenGL2.0的驱动，因为如果显卡不是很好的话OpenGL加速性能也不会有很大的提高
+/如何遍历控件，根据控件类型自动设置相应的style？
+    见Basic/Tool/TestTraversal.qml
+/如何编译类库(so, dll），包含qml、Image等资源
+    用qrc方式
+/测试vs插件和qtcreator哪种开发环境开发便利（文件组织、智能感知、调试、其他）
+    不用比了，vs插件不支持移动开发
+/几个内置图像资源：
+    qrc:///particleresources/star.png
+    qrc:///particleresources/glowdot.png
+    qrc:///particleresources/fuzzydot.png
+    http://qt-project.org/images/qt13a/Qt-logo.png
+
+------------------------------------
+建议
+------------------------------------
+能否用简单语句来创建qml对象?如
+    Rectangle r = new Rectangle(parent);
+    r.width = 100;
+    r.height = 5;
+    r.color = 'red';
+
+import 加上版本号的方式非常麻烦
+    问题
+        （1）升级或者迁移都要批量改代码
+        （2）类库之间的依赖很难处理，一个库改了版本号，另外一个是否要改？不清楚
+    能否类似.NET
+        发布Qt核心库版本（如5.0)，且稳定少变，一两年出一个新版本即可。
+        三方模块都依赖核心库的某个版本，且易查
+        import去掉版本号硬编码，编译的时候选择核心库版本号即可
+
+属性
+    新增private关键字，用于组件内部使用
+
+color
+    Qt.color('red');
+    Qt.color('#f0f0f0');
+
+个人觉得缺乏的属性
+    item
+        border
+        color
+
+Qml中如何定义自己的组合属性
+    好像没啥办法
+    即便定义了
+        Item{
+            property QtObject border : QtObject{
+                property int width;
+                property color color;
+            }
+        }
+    在其它页面调用该组件也无法使用，报错
+        xxx{ border.width: 10}
+
+
+能否简单绑定到json，如
+    property var json : [
+        {jid:1, title:'title1'},
+        {jid:2, title:'title2'},
+        {jid:3, title:'title3'}
+    ]
+    ListView{
+        anchors.fill: parent
+        model: json    // fail
+        delegate: Rectangle{
+            width: parent.width;
+            height: 30
+            anchors.margins: 5
+            Text {
+                text: jid + title
+            }
+        }
+    }
+    注：现有逻辑必须用ListModel封装
+    ListModel{
+        Component.onCompleted: append(json);
+    }
+
+
+Animation
+    建议加上enable属性
+    现在可以用以下方式模拟：
+    NumberAnimation{target: enableScale?panelMain:null; properties: 'scale'; from: 0.9; to: 1;easing.type: Easing.OutExpo;}
+

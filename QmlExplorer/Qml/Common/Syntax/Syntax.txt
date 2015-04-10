@@ -1,0 +1,5 @@
+Qml传递数据有以下几个办法
+- 可用全局 ContextObject 保存全局变量
+- 可用全局 ContextProperty 保存全局属性
+- 用property暴露属性给调用者
+- 用信号来传递数据

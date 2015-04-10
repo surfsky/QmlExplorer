@@ -1,0 +1,31 @@
+----------------------------------------
+尺寸
+----------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------
+存储
+----------------------------------------
+ios
+    ios 7
+        Documents and ../Library
+    ios 8
+        The file system layout of app containers has changed on disk. Rather than relying on hard-coded directory structure…”
+
+
+
+android
+
+
+
+windows phone

@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/sounds">
+        <file>bird.wav</file>
+        <file>electricity.wav</file>
+        <file>thunder.wav</file>
+    </qresource>
+</RCC>

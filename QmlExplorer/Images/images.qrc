@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>splash/splash.png</file>
+        <file>splash/splash_640.png</file>
+        <file>splash/splash_n9.png</file>
+        <file>back.png</file>
+        <file>bubble.png</file>
+        <file>bug.png</file>
+        <file>busy.png</file>
+        <file>button-pressed.png</file>
+        <file>button.png</file>
+        <file>edit.png</file>
+        <file>front.png</file>
+        <file>header.png</file>
+        <file>progress-background.png</file>
+        <file>progress-fill.png</file>
+        <file>selectedrow.png</file>
+        <file>shadow.png</file>
+        <file>slider-handle.png</file>
+        <file>tab.png</file>
+        <file>tab_selected.png</file>
+        <file>textfield.png</file>
+    </qresource>
+</RCC>

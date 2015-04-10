@@ -1,0 +1,42 @@
+<RCC>
+    <qresource prefix="/styles">
+        <file>style1/bubble.png</file>
+        <file>style1/busy.png</file>
+        <file>style1/button-pressed.png</file>
+        <file>style1/button.png</file>
+        <file>style1/progress-background.png</file>
+        <file>style1/progress-fill.png</file>
+        <file>style1/shadow.png</file>
+        <file>style1/slider-handle.png</file>
+        <file>style1/Style.qml</file>
+        <file>style1/tab.png</file>
+        <file>style1/tab_selected.png</file>
+        <file>style1/textfield.png</file>
+        <file>style2/busy.png</file>
+        <file>style2/Style.qml</file>
+        <file>style3/Style.qml</file>
+        <file>touch/images/button_default.png</file>
+        <file>touch/images/button_pressed.png</file>
+        <file>touch/images/navigation_next_item.png</file>
+        <file>touch/images/navigation_previous_item.png</file>
+        <file>touch/images/tab_selected.png</file>
+        <file>touch/images/tabs_standard.png</file>
+        <file>touch/images/textinput.png</file>
+        <file>touch/images/toolbar.png</file>
+        <file>touch/bubble.png</file>
+        <file>touch/busy.png</file>
+        <file>touch/button-pressed.png</file>
+        <file>touch/button.png</file>
+        <file>touch/progress-background.png</file>
+        <file>touch/progress-fill.png</file>
+        <file>touch/shadow.png</file>
+        <file>touch/slider-handle.png</file>
+        <file>touch/Style.qml</file>
+        <file>touch/tab.png</file>
+        <file>touch/tab_selected.png</file>
+        <file>touch/textfield.png</file>
+        <file>StyleBase.qml</file>
+        <file>TestStyle.qml</file>
+        <file>ios7/Style.qml</file>
+    </qresource>
+</RCC>

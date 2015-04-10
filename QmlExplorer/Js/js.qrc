@@ -1,0 +1,28 @@
+<RCC>
+    <qresource prefix="/js">
+        <file>string.js</file>
+        <file>common.js</file>
+        <file>date.js</file>
+        <file>_math.js</file>
+        <file>ajax.js</file>
+        <file>json.js</file>
+        <file>TestDate.qml</file>
+        <file>TestNumber.qml</file>
+        <file>TestString.qml</file>
+        <file>TestJson.qml</file>
+        <file>misc.js</file>
+        <file>TestArray.qml</file>
+        <file>TestLoop.qml</file>
+        <file>array.js</file>
+        <file>qml.js</file>
+        <file>TestJs.qml</file>
+        <file>TestAjax.qml</file>
+        <file>hashmap.js</file>
+        <file>TestString_Ascii.qml</file>
+        <file>TestCommon.qml</file>
+        <file>color.js</file>
+        <file>math.js</file>
+        <file>TestList.qml</file>
+        <file>graphy.js</file>
+    </qresource>
+</RCC>
