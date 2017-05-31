@@ -3226,7 +3226,8 @@ DISTFILES += \
     Qml/UI/Basic/TestForm_Row.qml \
     Qml/Controls/Views/LogView.qml \
     Qml/Controls/Forms/Edit/IPEdit3.qml \
-    Qml/Controls/Forms/Edit/IPEdit.qml
+    Qml/Controls/Forms/Edit/IPEdit.qml \
+    Qml/Effect/Shader/RifferEffect.qml
 
 ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 

@@ -7,7 +7,7 @@ Grid {
     spacing: 10
     columns: 2
 
-    Panel{
+    CollapsablePanel{
         title: 'panel1'
         content: Rectangle{
             anchors.fill: parent
@@ -15,7 +15,7 @@ Grid {
         }
     }
 
-    Panel{
+    CollapsablePanel{
         title: 'panel2'
         headColor: '#f0f0f0'
         content: Rectangle{
@@ -24,7 +24,7 @@ Grid {
         }
     }
 
-    Panel{
+    CollapsablePanel{
         title: 'panel3'
         content: Rectangle{
             anchors.fill: parent
@@ -32,7 +32,7 @@ Grid {
         }
     }
 
-    Panel{
+    CollapsablePanel{
         title: 'panel4'
         content: Rectangle{
             anchors.fill: parent

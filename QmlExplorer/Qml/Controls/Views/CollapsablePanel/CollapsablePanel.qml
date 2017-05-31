@@ -26,6 +26,7 @@ Rectangle {
     property bool collapse : false;
     property bool collapsable : true;
     property alias content : loader.sourceComponent;
+    //property alias contentMargins: loader.anchors.margins;
 
 
     // head
@@ -94,7 +95,6 @@ Rectangle {
         Loader{
             id: loader
             anchors.fill: parent
-            anchors.margins: 5
         }
     }
 

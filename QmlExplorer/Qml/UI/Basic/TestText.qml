@@ -155,7 +155,7 @@ Grid {
     Text {
         text: "file:///D:/coding-qt/_code/_test/QtMobile/QtMobile/qml/Animation/Test"
         font.pixelSize: 20
-        width: font.pixelSize - 5
+        width: 200  //font.pixelSize - 5
         wrapMode: Text.WrapAnywhere
         lineHeight: 1.1
     }

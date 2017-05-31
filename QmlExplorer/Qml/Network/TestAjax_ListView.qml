@@ -1,6 +1,6 @@
 import QtQuick 2.0
 import "../../js/ajax.js" as Ajax
-import "../Controls/ImageView"
+import "../Controls/Views/ImageView"
 
 
 /**
