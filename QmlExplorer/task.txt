@@ -468,6 +468,16 @@ Key(按键处理)
 ----------------------------------------------
 ----------------------------------------------
 ----------------------------------------------
+#INCLUDEPATH += $$PWD/../../../../../Qt/qt3d/build-qt3d-Desktop_Qt_5_4_0_MinGW_32bit-Release/include
+#DEPENDPATH += $$PWD/../../../../../Qt/qt3d/build-qt3d-Desktop_Qt_5_4_0_MinGW_32bit-Release/include
+
+#win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../../Qt/qt3d/build-qt3d-Desktop_Qt_5_4_0_MinGW_32bit-Release/lib/ -lQt53
+#else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../../Qt/qt3d/build-qt3d-Desktop_Qt_5_4_0_MinGW_32bit-Release/lib/ -lQt53d
+
+#win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../../Qt/qt3d/build-qt3d-Desktop_Qt_5_4_0_MinGW_32bit-Release/lib/ -lQt53DQuick
+#else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../../Qt/qt3d/build-qt3d-Desktop_Qt_5_4_0_MinGW_32bit-Release/lib/ -lQt53DQuickd
+
+
     Rectangle{
         height:60
         width:480

@@ -2,9 +2,9 @@ import QtQuick 2.0
 import QtQuick.Controls 1.2
 import QtQuick.Controls.Styles 1.2
 import QtWebKit 3.0
-import "../js/ajax.js" as Ajax
-import "UI/DataView/Model/"
-import "controls/Views/FolderListView"
+import "./js/ajax.js" as Ajax
+import "./Controls/Views/FolderListView"
+//import "./Controls/DataView/Model/"
 
 /**
 Qml运行器（移动版本），可以展示qml源码
