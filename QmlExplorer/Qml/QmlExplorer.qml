@@ -4,7 +4,7 @@ import QtQuick.Controls.Styles 1.2
 import QtQuick.Window 2.0
 import QtQuick.Layouts 1.1
 import QtGraphicalEffects 1.0
-import "./Controls/FolderListView"
+import "./Controls/Views/FolderListView"
 
 /**
 Qml运行器，可以展示qml源码
@@ -45,7 +45,7 @@ docker面板
     工具栏可收缩成一个标签（docker）
 
 */
-Window
+Item
 {
     // basic
     id: root
@@ -87,12 +87,10 @@ Window
     //-----------------------------------------------
     // 顶部工具栏
     //-----------------------------------------------
-    RowLayout {
+    Rectangle{
         id: titleBar
-        width: parent.width
         height: 30
-        spacing: 5
-
+        width: parent.width;
         LinearGradient {
             anchors.fill: parent
             gradient: Gradient{
@@ -100,6 +98,7 @@ Window
                 GradientStop { position: 1.0; color: "#e0e0e0" }
             }
         }
+
         Button{
             id: btnFolder
             width: 60
@@ -111,6 +110,8 @@ Window
             id: btnInsight
             width: 60
             anchors.verticalCenter: parent.verticalCenter
+            anchors.left: btnFolder.right;
+            anchors.leftMargin: 5;
             text: "Insight"
             onClicked: switchInsightPanel();
             visible: false; // 这个按钮有bug
@@ -119,17 +120,22 @@ Window
             id: txtUrl
             anchors.verticalCenter: parent.verticalCenter
             text: "http://www.baidu.com/"
-            Layout.fillWidth: true
+            anchors.left: btnFolder.right;
+            anchors.leftMargin: 5;
+            anchors.right: btnGo.left;
+            anchors.rightMargin: 5;
         }
         Button{
             id: btnGo
             width: 60
             anchors.verticalCenter: parent.verticalCenter
+            anchors.right: parent.right;
             anchors.rightMargin: 5
             text: "Go"
             onClicked: show(txtUrl.text)
         }
     }
+
 
 
     //-----------------------------------------------
@@ -147,7 +153,7 @@ Window
             height: parent.height
             fontSize: 12
             rowHeight: 20
-            initFolder: Qt.resolvedUrl('qml')
+            initFolder: Qt.resolvedUrl('.')
             rootFolder: Qt.resolvedUrl('../../')
             onItemClicked: {
                 if (!item.isDir){

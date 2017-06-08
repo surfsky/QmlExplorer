@@ -1,6 +1,6 @@
 import QtQuick 2.0
 import QtQuick.Controls 1.2
-import "../js/qml.js" as Qml
+import "./Js/qml.js" as Qml
 
 
 /**

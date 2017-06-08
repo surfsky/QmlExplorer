@@ -21,6 +21,7 @@ int main(int argc, char *argv[])
 
     // 主窗体
     QQuickView view;
+    //view.setSource(QUrl("qrc:/Qml/QmlExplorer.qml"));
     view.setSource(QUrl("qrc:/Qml/QmlExplorerMobile.qml"));
     view.setResizeMode(QQuickView::SizeRootObjectToView);
     view.show();

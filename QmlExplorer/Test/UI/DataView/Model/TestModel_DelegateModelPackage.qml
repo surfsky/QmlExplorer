@@ -3,7 +3,7 @@ import QtQuick 2.0
 
 /**
 Package测试
-一个package可容纳多个delegate展示
+一个package可容纳多个delegate视图
     - 用 Package.name 来区分
     - 用 model.parts.name 来调用
 **/
@@ -53,7 +53,7 @@ Rectangle {
             ListElement { display: "Seven" }
             ListElement { display: "Eight" }
         }
-        delegate: PackageModel{}
+        delegate: PackageDelegate{}
     }
 
 }

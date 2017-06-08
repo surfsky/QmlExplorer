@@ -82,6 +82,6 @@ RowLayout {
     // 字体
     FontLoader {
         id: fontLoader
-        source: "qrc:/fonts/ubuntumono.ttf"
+        source: "qrc:/Assets/Fonts/ubuntumono.ttf"
     }
 }

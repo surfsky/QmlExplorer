@@ -204,7 +204,6 @@
         <file>UI/DataView/ListView/TestListView_Item_SlideMenu2.qml</file>
         <file>UI/DataView/ListView/TestListView_Nested.qml</file>
         <file>UI/DataView/ListView/TestListView_News.qml</file>
-        <file>UI/DataView/Model/PackageModel.qml</file>
         <file>UI/DataView/Model/TestModel_Ajax.qml</file>
         <file>UI/DataView/Model/TestModel_CRUD.qml</file>
         <file>UI/DataView/Model/TestModel_DelegateModel.qml</file>
@@ -614,5 +613,14 @@
         <file>Styles/StyleBase.qml</file>
         <file>Styles/styles.qrc</file>
         <file>Styles/TestStyle.qml</file>
+        <file>Network/_TestAjax_PostFile.qml</file>
+        <file>Network/_TestEnginio.qml</file>
+        <file>Network/data.xml</file>
+        <file>Network/TestAjax.qml</file>
+        <file>Network/TestAjax_ListView.qml</file>
+        <file>Network/TestAjax_XmlDOM.qml</file>
+        <file>Network/TestModel_XmlListModel.qml</file>
+        <file>Network/TestWebSocket.qml</file>
+        <file>UI/DataView/Model/PackageDelegate.qml</file>
     </qresource>
 </RCC>

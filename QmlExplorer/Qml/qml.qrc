@@ -13,24 +13,6 @@
         <file>Controls/Abandon/RectangleEx.qml</file>
         <file>Controls/Abandon/Shadow.qml</file>
         <file>Controls/Abandon/Test.qml</file>
-        <file>Controls/Bars/ProgressBar/content/background.png</file>
-        <file>Controls/Bars/ProgressBar/content/ProgressBar.qml</file>
-        <file>Controls/Bars/ProgressBar/main.qml</file>
-        <file>Controls/Bars/ScrollBar/pics/niagara_falls.jpg</file>
-        <file>Controls/Bars/ScrollBar/FlickableScrollBar.png</file>
-        <file>Controls/Bars/ScrollBar/FlickableScrollBar.qml</file>
-        <file>Controls/Bars/ScrollBar/ListViewScrollbar.png</file>
-        <file>Controls/Bars/ScrollBar/ScrollBar.qml</file>
-        <file>Controls/Bars/ScrollBar/TestFlickableScrollBar.qml</file>
-        <file>Controls/Bars/ScrollBar/TestScrollBar.qml</file>
-        <file>Controls/Bars/SearchBox/SearchBox1/images/clear.png</file>
-        <file>Controls/Bars/SearchBox/SearchBox1/images/lineedit-bg-focus.png</file>
-        <file>Controls/Bars/SearchBox/SearchBox1/images/lineedit-bg.png</file>
-        <file>Controls/Bars/SearchBox/SearchBox1/main.qml</file>
-        <file>Controls/Bars/SearchBox/SearchBox1/SearchBox.qml</file>
-        <file>Controls/Bars/SearchBox/SearchBox2/images/find16.png</file>
-        <file>Controls/Bars/SearchBox/SearchBox2/images/find32.png</file>
-        <file>Controls/Bars/SearchBox/SearchBox2/SearchBox.qml</file>
         <file>Controls/Charts/QChart/LICENSE</file>
         <file>Controls/Charts/QChart/QChart.gif</file>
         <file>Controls/Charts/QChart/QChart.js</file>
@@ -42,13 +24,6 @@
         <file>Controls/Charts/QChart/README.md</file>
         <file>Controls/Charts/QChart/TestQChart.qml</file>
         <file>Controls/Charts/readme.txt</file>
-        <file>Controls/Drawing/Gradient/old/GradientConical.qml</file>
-        <file>Controls/Drawing/Gradient/old/GradientLinear.qml</file>
-        <file>Controls/Drawing/Gradient/old/GradientRadial.qml</file>
-        <file>Controls/Drawing/Gradient/GradientConical.qml</file>
-        <file>Controls/Drawing/Gradient/GradientLinear.qml</file>
-        <file>Controls/Drawing/Gradient/GradientRadial.qml</file>
-        <file>Controls/Drawing/Gradient/TestGradients.qml</file>
         <file>Controls/Effectors/Images/bug.png</file>
         <file>Controls/Effectors/Images/butterfly.PNG</file>
         <file>Controls/Effectors/Images/curf.jpg</file>
@@ -376,7 +351,6 @@
         <file>Controls/Views/TreeView/treeview.gif</file>
         <file>Controls/Views/TreeView/TreeView.qml</file>
         <file>Controls/Views/TreeView/trigle.png</file>
-        <file>Controls/Views/AboutWindow.qml</file>
         <file>Controls/Views/ImageWindow.qml</file>
         <file>Controls/Views/LogView.qml</file>
         <file>Controls/FPS.qml</file>
@@ -406,16 +380,6 @@
         <file>Js/TestNumber.qml</file>
         <file>Js/TestString.qml</file>
         <file>Js/TestString_Ascii.qml</file>
-        <file>Network/_TestAjax_PostFile.qml</file>
-        <file>Network/_TestEnginio.qml</file>
-        <file>Network/_TestWebSocket.qml</file>
-        <file>Network/data.xml</file>
-        <file>Network/JsonListModel.qml</file>
-        <file>Network/TestAjax.qml</file>
-        <file>Network/TestAjax_ListView.qml</file>
-        <file>Network/TestAjax_XmlDOM.qml</file>
-        <file>Network/TestModel_JsonListModel.qml</file>
-        <file>Network/TestModel_XmlListModel.qml</file>
         <file>Index.qml</file>
         <file>Main.qml</file>
         <file>QmlEditor.qml</file>
@@ -501,25 +465,35 @@
         <file>Controls/Forms/ios8/Switch.qml</file>
         <file>Controls/Forms/ios8/Switch2.qml</file>
         <file>Controls/Forms/readme.txt</file>
-        <file>Controls/Shape/_Line.qml</file>
-        <file>Controls/Shape/_SemiRoundRectangle.qml</file>
-        <file>Controls/Shape/_TestPie.qml</file>
-        <file>Controls/Shape/_TestSemiRoundRectangle.qml</file>
-        <file>Controls/Shape/Cell.qml</file>
-        <file>Controls/Shape/Circular.qml</file>
-        <file>Controls/Shape/Line.qml</file>
-        <file>Controls/Shape/Parallelogram.qml</file>
-        <file>Controls/Shape/PieSlice.qml</file>
-        <file>Controls/Shape/Polygram.qml</file>
-        <file>Controls/Shape/RectangleEx.qml</file>
-        <file>Controls/Shape/Shape.qml</file>
-        <file>Controls/Shape/ShapeBorder.qml</file>
-        <file>Controls/Shape/Square.qml</file>
-        <file>Controls/Shape/TestShapes.qml</file>
-        <file>Controls/Shape/Trapezoid.qml</file>
-        <file>Controls/Shape/Triangle.qml</file>
         <file>Controls/Views/Tip/CircleTip.qml</file>
         <file>Controls/Views/Tip/SquareTip.qml</file>
         <file>Controls/Views/readme.txt</file>
+        <file>Controls/Components/JsonListModel/JsonListModel.qml</file>
+        <file>Controls/Components/JsonListModel/TestModel_JsonListModel.qml</file>
+        <file>About.qml</file>
+        <file>Controls/Views/Gradients/old/GradientConical.qml</file>
+        <file>Controls/Views/Gradients/old/GradientLinear.qml</file>
+        <file>Controls/Views/Gradients/old/GradientRadial.qml</file>
+        <file>Controls/Views/Gradients/GradientConical.qml</file>
+        <file>Controls/Views/Gradients/GradientLinear.qml</file>
+        <file>Controls/Views/Gradients/GradientRadial.qml</file>
+        <file>Controls/Views/Gradients/TestGradients.qml</file>
+        <file>Controls/Views/Shapes/_Line.qml</file>
+        <file>Controls/Views/Shapes/_SemiRoundRectangle.qml</file>
+        <file>Controls/Views/Shapes/_TestPie.qml</file>
+        <file>Controls/Views/Shapes/_TestSemiRoundRectangle.qml</file>
+        <file>Controls/Views/Shapes/Cell.qml</file>
+        <file>Controls/Views/Shapes/Circular.qml</file>
+        <file>Controls/Views/Shapes/Line.qml</file>
+        <file>Controls/Views/Shapes/Parallelogram.qml</file>
+        <file>Controls/Views/Shapes/PieSlice.qml</file>
+        <file>Controls/Views/Shapes/Polygram.qml</file>
+        <file>Controls/Views/Shapes/RectangleEx.qml</file>
+        <file>Controls/Views/Shapes/Shape.qml</file>
+        <file>Controls/Views/Shapes/ShapeBorder.qml</file>
+        <file>Controls/Views/Shapes/Square.qml</file>
+        <file>Controls/Views/Shapes/TestShapes.qml</file>
+        <file>Controls/Views/Shapes/Trapezoid.qml</file>
+        <file>Controls/Views/Shapes/Triangle.qml</file>
     </qresource>
 </RCC>

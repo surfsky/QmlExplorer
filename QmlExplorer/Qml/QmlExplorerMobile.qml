@@ -1,8 +1,8 @@
 import QtQuick 2.0
 import QtQuick.Controls 1.2
 import QtQuick.Controls.Styles 1.2
-import QtWebKit 3.0
-import "./js/ajax.js" as Ajax
+import QtWebView 1.1
+import "./Js/ajax.js" as Ajax
 import "./Controls/Views/FolderListView"
 //import "./Controls/DataView/Model/"
 

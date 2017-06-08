@@ -2,6 +2,7 @@ import QtQuick 2.0
 import Qt.WebSockets 1.0
 
 Text {
+    id: root
     width: 480
     height: 48
 
@@ -12,17 +13,18 @@ Text {
         id: socket
         url: "ws://echo.websocket.org"
         active: true
-        onTextMessageReceived: {
-            text = message
-        }
         onStatusChanged: {
             if (socket.status == WebSocket.Error) {
-                console.log("Error: " + socket.errorString)
+                root.text = "Error: " + socket.errorString;
             } else if (socket.status == WebSocket.Open) {
-                socket.sendTextMessage("ping")
+                root.text = "Open";
+                socket.sendTextMessage("ping");
             } else if (socket.status == WebSocket.Closed) {
-                text += "\nSocket closed"
+                root.text = "closed";
             }
+        }
+        onTextMessageReceived: {
+            text = message;
         }
     }
 }

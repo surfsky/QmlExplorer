@@ -1,5 +1,5 @@
 import QtQuick 2.0
-import "../../js/ajax.js" as Ajax
+import "../../../Js/ajax.js" as Ajax
 
 /**
 模拟XmlListModel 实现 JsonListModel

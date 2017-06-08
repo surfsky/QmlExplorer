@@ -4,6 +4,7 @@ import Enginio 1.0
 
 /**
 测试Qt Enginio数据服务（Baas）
+该模块已经不包括在基础类库中了
 */
 Rectangle {
     width: 600

@@ -1,7 +1,7 @@
 import QtQuick 2.0
 import QtQuick.Controls 1.2
-import QtWebKit 3.0
-import "../js/ajax.js" as Ajax
+import QtWebView 1.1
+import "./Js/ajax.js" as Ajax
 
 /**
 QML 文件查看器
@@ -113,19 +113,20 @@ Item{
             onLoadProgressChanged: lblStatus.text = loadProgress + '%'
         }
         // 源码视图
+        /*
         TextArea{
             id: containerText
             anchors.fill: parent
             visible: true
             wrapMode: TextEdit.NoWrap
         }
-        /*
+        */
         // 语法高亮编辑器视图
         QmlEditor{
             id: containerText
             anchors.fill: parent
             visible: false
-        }*/
+        }
         // 错误视图
         Component{
             id: failComponent
