@@ -1,7 +1,7 @@
 import QtQuick 2.0
 import QtQuick.Controls 1.2
 import QtQuick.Layouts 1.1
-import SyntaxHighlighter 1.0
+//import SyntaxHighlighter 1.0
 
 
 /**
@@ -69,12 +69,12 @@ RowLayout {
         //inputMethodHints: Qt.ImhNoPredictiveText
         //selectByMouse: true
 
-        // 代码高亮
-        SyntaxHighlighter {
-            id: syntaxHighlighter
-        }
+        // 代码高亮（先注释掉，可在qmlscene直接跑，发布时记得取消注释）
+        //SyntaxHighlighter {
+        //    id: syntaxHighlighter
+        //}
         Component.onCompleted: {
-            syntaxHighlighter.setHighlighter(textArea)
+            //syntaxHighlighter.setHighlighter(textArea)
             textArea.forceActiveFocus()
         }
     }

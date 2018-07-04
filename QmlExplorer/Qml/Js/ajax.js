@@ -1,5 +1,6 @@
 /**
 ajax 辅助函数
+注意：qml提供的ajax方法并不支持cookie qt5.8
 */
 
 // AJAX

@@ -51,19 +51,6 @@
         <file>Common/Tool/TestQt.qml</file>
         <file>Common/Tool/TestScreen.qml</file>
         <file>Common/Tool/TestTraversal.qml</file>
-        <file>Common/reame.txt</file>
-        <file>Common/TestColor.qml</file>
-        <file>Common/TestGradient.qml</file>
-        <file>Common/TestItem.qml</file>
-        <file>Common/TestItem_Layer.qml</file>
-        <file>Common/TestItem_ToImage.qml</file>
-        <file>Common/TestQtObject.qml</file>
-        <file>Common/TestRectangle.qml</file>
-        <file>Common/TestSystemPalette.qml</file>
-        <file>Common/TestTimer.qml</file>
-        <file>Common/TestTimerBug.qml</file>
-        <file>Common/TestTransform.qml</file>
-        <file>Common/TestTransform_Axis.qml</file>
         <file>KeyMouseTouch/DragDrop/DropableText.qml</file>
         <file>KeyMouseTouch/DragDrop/TestDropableText.qml</file>
         <file>KeyMouseTouch/DragDrop/TestMouseDrag.qml</file>
@@ -136,12 +123,9 @@
         <file>Multimedia/_TestQtAV.qml</file>
         <file>Multimedia/TestSound.qml</file>
         <file>Multimedia/TestVideo.qml</file>
-        <file>Qt3D/Models/Capsule.qml</file>
         <file>Qt3D/Models/cube.obj</file>
         <file>Qt3D/Models/Cube.qml</file>
         <file>Qt3D/Models/Cylinder.qml</file>
-        <file>Qt3D/Models/plugins.qmltypes</file>
-        <file>Qt3D/Models/qmldir</file>
         <file>Qt3D/Models/quad.obj</file>
         <file>Qt3D/Models/Quad.qml</file>
         <file>Qt3D/Models/Sphere.qml</file>
@@ -622,5 +606,42 @@
         <file>Network/TestModel_XmlListModel.qml</file>
         <file>Network/TestWebSocket.qml</file>
         <file>UI/DataView/Model/PackageDelegate.qml</file>
+        <file>UI/Basic/TestCanlendar.qml</file>
+        <file>UI/Basic/TestColor.qml</file>
+        <file>UI/Basic/TestFlickable.qml</file>
+        <file>UI/Basic/TestFlipable.qml</file>
+        <file>UI/Basic/TestForm_Row.qml</file>
+        <file>UI/Basic/TestForm.qml</file>
+        <file>UI/Basic/TestFormValidator.qml</file>
+        <file>UI/Basic/TestGradient.qml</file>
+        <file>UI/Basic/TestGradient.qmlc</file>
+        <file>UI/Basic/TestItem_Layer.qml</file>
+        <file>UI/Basic/TestItem_ToImage.qml</file>
+        <file>UI/Basic/TestItem.qml</file>
+        <file>UI/Basic/TestQtObject.qml</file>
+        <file>UI/Basic/TestRectangle.qml</file>
+        <file>UI/Basic/TestScrollView.qml</file>
+        <file>UI/Basic/TestSplitView_WithLayout.qml</file>
+        <file>UI/Basic/TestSplitView.qml</file>
+        <file>UI/Basic/TestSystemPalette.qml</file>
+        <file>UI/Basic/TestTabView.qml</file>
+        <file>UI/Basic/TestText.qml</file>
+        <file>UI/Basic/TestText.qmlc</file>
+        <file>UI/Basic/TestTimer.qml</file>
+        <file>UI/Basic/TestTimerBug.qml</file>
+        <file>UI/Basic/TestTransform_Axis.qml</file>
+        <file>UI/Basic/TestTransform.qml</file>
+        <file>UI/Basic/TestWeb_WebEngine.qml</file>
+        <file>UI/Basic/TestWeb_WebKit.qml</file>
+        <file>UI/Basic/TestWeb_WebView.qml</file>
+        <file>UI/Basic/TestQuickControl2.qml</file>
+        <file>Common/readme.txt</file>
+        <file>Main.qml</file>
+        <file>Splash.qml</file>
+        <file>Qt3D/Models/Item3D.qml</file>
+        <file>Qt3D/TestEntity.qml</file>
+        <file>Qt3D/SceneView.qml</file>
+        <file>Qt3D/TestSceneView.qml</file>
+        <file>readme.txt</file>
     </qresource>
 </RCC>

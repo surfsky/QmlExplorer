@@ -7,8 +7,26 @@ A Qt QML running environment and examples explorer app.
 
 Features
 ===========
+Test:
+- Common (DynamicalCreate, Font, Image, Singleton, Syntax, Thread, Tool)
+- Effect (Animation, Canvas, GraphicalEffect, Particles, Shader)
+- KeyMouseTouch
+- MultiDensity
+- Multimedia (Sound, video)
+- Network ( Ajax, XmlListModel, WebSocket)
+- Qt3D
+- Storage
+- Styles
+- UI (Basic, Dataview, Layout, Pages, WindowsDialog)
+- UnitTest
+
 
 Controls:
+- Charts
+- Effectors
+- Gauges
+- Views
+- Components
 - Popup
 - PageView
 - TabView
@@ -22,13 +40,15 @@ Controls:
 - JsonListModel
 - ...
 
+
 Apps:
 - Clock
 - Dial
 - Docker
 - ImageCropper
 - LiveTile
-- NodePad
+- NotePad
+- Painter
 - RoundMenu
 - ....
 

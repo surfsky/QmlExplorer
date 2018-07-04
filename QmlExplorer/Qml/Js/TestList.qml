@@ -29,7 +29,7 @@ Column{
     LinearGradient {
         width: 100; height: 100
         start: Qt.point(0, 0)
-        end: Qt.point(100, 100) //// BUG：无效
+        end: Qt.point(100, 100) //// BUG：无效5.4
         gradient: g;
     }
 

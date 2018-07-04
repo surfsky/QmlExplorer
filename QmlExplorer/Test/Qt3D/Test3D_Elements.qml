@@ -2,7 +2,10 @@ import QtQuick 2.3
 import Qt3D 2.0
 import Qt3D.Shapes 2.0
 
-
+/*
+代码已经跑不起来了
+但非常简洁，供参考
+*/
 Viewport {
     width: 640; height: 480
     camera: Camera {
@@ -19,6 +22,8 @@ Viewport {
     lightModel: LightModel {
         ambientSceneColor: Qt.rgba(0.2, 0.2, 0.2, 1.0);
     }
+
+
     // 囊状
     Capsule {
         radius: 0.5

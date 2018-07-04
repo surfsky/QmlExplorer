@@ -62,7 +62,7 @@ Rectangle {
         Button{text: 'destory rect3'; onClicked: rect3.destroy();}
         Button{text: 'destory rect2'; onClicked: rect2.destroy();}
         Button{text: 'destory rect1'; onClicked: rect1.destroy();}
-        Button{text: 'quit';      onClicked: Qt.quit();}
+        Button{text: 'quit';          onClicked: Qt.quit();}
     }
 
 }

@@ -1,7 +1,12 @@
-﻿2017-05 重启该项目，目标
+﻿bug
+    改为资源方式后，动态创建的组件再调用其它组件就会报错
+    修复foldertreeview，无法返回上级菜单(run 模式）
+
+
+2017-05 重启该项目，目标
     管理
-        分离测试代码和自有代码(App/Test/Controls/Components/Js/Plugings/...)
-        为了避免部署问题，完全用资源方式来管理代码。QtCreator已经支持目录方式管理代码，不会那么乱了。
+        /分离测试代码和自有代码(App/Test/Controls/Components/Js/Plugings/...)
+        /为了避免部署问题，完全用资源方式来管理代码。QtCreator已经支持目录方式管理代码，不会那么乱了。
         重命名，如QPlay
     增加测试模块
         增加QuickControl2的测试代码
@@ -9,7 +14,7 @@
         增加图标字体模块
         集成并增加box2d子项目
     梳理组件库
-        剥离自有控件组件库（view/controls/components/jslib/...)
+        /剥离自有控件组件库（view/controls/components/jslib/...)
         梳理移动控件库（ios风格／可设置样式／参考QuickControl2／依情况判断是继承还是自建）
     实现各种扩展插件库
         网络库：qml自带的ajax不支持cookie
@@ -27,17 +32,11 @@
         依情况购买vplay授权：https://v-play.net/pricing/ 。免费版的不能定制欢迎屏。
 
 
-bug
-    修复foldertreeview，无法返回上级菜单
-    嵌在资源内后，组件互相调用就会报错？
-
 
 ------------------------------------
 target
 注：该项目有众多代码来自qt安装包，如 D:\Qt\Qt5.3.2\Examples\Qt-5.3\quick
 ------------------------------------
-/发布到github
-
 目标
     /移动app框架、兼示例展示库
     /将移动相关的各种示例都丢到一个项目里面去
@@ -299,6 +298,8 @@ Key(按键处理)
 ----------------------------------------------
 已完成
 ----------------------------------------------
+/发布到github
+/修复qt3部分演示
 /MouseArea事件识别
     /swipe
     /pin
@@ -466,12 +467,55 @@ Key(按键处理)
 
 
 ----------------------------------------------
+废弃代码
 ----------------------------------------------
-----------------------------------------------
-----------------------------------------------
-----------------------------------------------
-----------------------------------------------
-----------------------------------------------
+QString path = QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation).first();
+settings = new QSettings(path.append("/todo1-2-3.ini"), QSettings::IniFormat);
+
+
+
+
+    QQmlEngine engine;  // 获取上下文
+    QQmlComponent c(&engine, url);
+    QObject *obj = c.create();
+    QWindow *window = qobject_cast<QWindow *>(obj);
+    if (NULL == window ) {
+        QQuickView view;
+        view.setSource(url);
+        view.setResizeMode(QQuickView::SizeRootObjectToView);
+        view.show();
+    }
+    else
+        window->show();
+
+
+    // 方法1：用QQmlApplicationEngine来加载基于ApplicationWindow的文件
+    //QQmlApplicationEngine engine;
+    //engine.load(QUrl("qrc:///touch/main.qml"));
+
+    // 方法2：用QQuickView加载基于item的qml文件
+    //QQuickView view;
+    //view.setSource(QUrl("./qml/Animation/TestAnimation.qml"));
+    //view.setSource(QUrl("ASSERT:///qml/UI/Popup/TestDialog_Custom.qml"));  // android
+    //view.setSource(QUrl("./qml/UI/Popup/TestDialog_Custom.qml"));
+    //view.setResizeMode(QQuickView::SizeRootObjectToView);
+    //view.show();
+
+
+    // 方法3：用QQmlComponent来加载qml文件（基于ApplicationWindow)
+    //QQmlComponent cmpt(&engine, QUrl("qrc:///touch/main.qml"));  // 基于ApplicationWindow/Window
+    //cmpt->create();
+
+
+    // 方法4：用QQmlComponent来加载qml文件（基于Item，并用QQuickWindow加载）
+    //QQmlComponent cmpt(&engine, QUrl("./qml/Animation/TestAnimation.qml"));  // 啥也没有（可能还要用QQuickView来封装）
+    //QObject *o = cmpt.create();
+    //QWindow *window = qobject_cast<QWindow *>(o);  //
+    //window->show();
+
+
+
+
 #INCLUDEPATH += $$PWD/../../../../../Qt/qt3d/build-qt3d-Desktop_Qt_5_4_0_MinGW_32bit-Release/include
 #DEPENDPATH += $$PWD/../../../../../Qt/qt3d/build-qt3d-Desktop_Qt_5_4_0_MinGW_32bit-Release/include
 

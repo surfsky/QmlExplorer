@@ -25,4 +25,7 @@
         <file>TestList.qml</file>
         <file>graphy.js</file>
     </qresource>
+    <qresource prefix="/">
+        <file>map.js</file>
+    </qresource>
 </RCC>

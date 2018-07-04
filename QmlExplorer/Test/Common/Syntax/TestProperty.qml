@@ -63,6 +63,11 @@ Column {
         property int p3: 3
         property int p4: 4
     }
+    // 组合类型属性（border.width, border.color）
+    property var border : QtObject{
+        property real width: 2;
+        property color color: 'green';
+    }
 
     // 数组
     property var someArray : new Array();
@@ -86,14 +91,8 @@ Column {
     // 只读
     readonly property int degree: 0
 
-    // 缺省属性
-    //default property list<Item> rects;   // 编译错误
-    //default property list rects :[       // 编译错误
-    //        Rectangle {color: 'red'},
-    //        Rectangle {color: 'blue'}
-    //    ]
     /*
-    缺省属性一般用于放置子元素
+    缺省属性。一般用于放置子元素
     如Item里面可以容纳任何Item，事实上是用default property list<Object> data 来定义的
     用了缺省属性后，就可以直接直接将子元素放到父元素内，而不用写属性名称
         TestProperty{
@@ -110,13 +109,21 @@ Column {
     可参考TabWidget官方示例
     */
     default property alias content: container.children
+    //default property list<Item> rects;   // 编译错误
+    //default property list rects :[       // 编译错误
+    //        Rectangle {color: 'red'},
+    //        Rectangle {color: 'blue'}
+    //    ]
 
-    // 如何使用组合属性？
-    // 弄成：border.width, border.color
-    property var borderWidth: 2
-    property var borderColor: 'green'
 
-
+    // 私有属性
+    // Qml没有private关键字
+    // 可用局部变量的方式来模拟实现, 仅内部可用，不公布到外部
+    // 此外Qt官方也用两个下划线的方式来定义私有属性，只是约定，编译器并不限制调用者访问
+    QtObject{
+        id: __private
+        property int privateProperty : 20;
+    }
 
 
     //--------------------------------
@@ -151,6 +158,13 @@ Column {
         text: 'get vec4 property(ok。但没有智能提示)'
         onClicked: {
             root.text = someVec4.p4;
+        }
+    }
+
+    Button{
+        text: 'get sub property(ok。但没有智能提示)'
+        onClicked: {
+            root.text = border.width;
         }
     }
 

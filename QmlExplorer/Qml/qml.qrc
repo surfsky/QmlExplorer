@@ -362,8 +362,6 @@
         <file>Js/common.js</file>
         <file>Js/date.js</file>
         <file>Js/graphy.js</file>
-        <file>Js/hashmap.js</file>
-        <file>Js/js.qrc</file>
         <file>Js/json.js</file>
         <file>Js/math.js</file>
         <file>Js/misc.js</file>
@@ -380,15 +378,11 @@
         <file>Js/TestNumber.qml</file>
         <file>Js/TestString.qml</file>
         <file>Js/TestString_Ascii.qml</file>
-        <file>Index.qml</file>
-        <file>Main.qml</file>
         <file>QmlEditor.qml</file>
         <file>QmlExplorer.qml</file>
         <file>QmlExplorerMobile.qml</file>
         <file>QmlInsighter.qml</file>
         <file>QmlViewer.qml</file>
-        <file>Splash.qml</file>
-        <file>Test.qml</file>
         <file>Controls/Effectors/shaders/billboard.fsh</file>
         <file>Controls/Effectors/shaders/billboard.png</file>
         <file>Controls/Effectors/shaders/blackandwhite.fsh</file>
@@ -495,5 +489,8 @@
         <file>Controls/Views/Shapes/TestShapes.qml</file>
         <file>Controls/Views/Shapes/Trapezoid.qml</file>
         <file>Controls/Views/Shapes/Triangle.qml</file>
+        <file>Js/map.js</file>
+        <file>Controls/Views/PageView/qmldir</file>
+        <file>readme.txt</file>
     </qresource>
 </RCC>

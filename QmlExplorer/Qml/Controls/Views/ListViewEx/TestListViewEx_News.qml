@@ -1,6 +1,6 @@
 import QtQuick 2.0
-import "../../../../Controls/Views/PageView"
-
+import "../PageView"
+import PageView 1.0
 
 /**
 新闻示例

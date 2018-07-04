@@ -14,7 +14,7 @@ Window {
 
     Text {
         y: 20
-        text: 'This is <b>about</b> <i>information</i>.....'
+        text: '<b>QmlExplorer</b><br/><i>A Qt QML running environment and examples explorer app.</i>.....'
         anchors.centerIn:  parent
     }
     Row{

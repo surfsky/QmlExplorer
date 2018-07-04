@@ -2,8 +2,8 @@ import QtQuick 2.0
 import Qt3D 2.0
 import Qt3D.Shapes 2.0
 
-
 /**
+代码已经跑不起来了，供参考
 测试3D立方体
 更多Quick3D请查看qt3d/examples目录
 */

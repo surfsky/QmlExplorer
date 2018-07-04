@@ -45,10 +45,7 @@ OTHER_FILES += \
 ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 
 DISTFILES += \
-    ../../../../../Code/App/QmlExplorer/QmlExplorer-github/QmlExplorer/FAQ.txt \
-    ../../../../../Code/App/QmlExplorer/QmlExplorer-github/QmlExplorer/Lisence.txt \
-    ../../../../../Code/App/QmlExplorer/QmlExplorer-github/QmlExplorer/Misc.txt \
-    ../../../../../Code/App/QmlExplorer/QmlExplorer-github/QmlExplorer/MobileInfo.txt
+    Test/Qt3D/readme.txt
 
 
 

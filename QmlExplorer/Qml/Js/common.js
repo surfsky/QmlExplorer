@@ -49,10 +49,16 @@ function log(){
     console.log(txt);
 }
 
+// 未测试
+function logFormat(){
+    var txt = sprintf(arguments);
+    console.log(txt);
+}
 
+// c语言风格格式化字符串
 function sprintf(){
-    var arg = [].slice.call(arguments)
-    var fmt = arg.shift()
+    var arg = [].slice.call(arguments);
+    var fmt = arg.shift();
     var i = 0;
     var txt = fmt.replace(/%([\w| ])?(\d)?([dfscx])/ig, function(_,a,b,c){
         var s = b ? new Array(b-0+1).join(a||'') : '';

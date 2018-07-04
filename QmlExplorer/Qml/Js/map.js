@@ -1,12 +1,24 @@
 /*
+用js实现的map
 http://blog.csdn.net/kevin_luan/article/details/33726115#
+
 var map = new Map();
 map.put("a","A");
 map.put("b","B");
 map.put("c","C");
 var v = map.get("a"); //返回：A
-var s = map.entrySet(); // 返回Entity[{key,value},{key,value}]
+var s = map.entries(); // 返回Entity[{key,value},{key,value}]
 var b = map.containsKey('kevin'); //返回:false
+alert("size："+map.size()+" key1："+map.get("key1"));
+map.remove("key1");
+map.put("key3","newValue");
+for(var i in map.values()){
+    document.write(i+"："+values[i]+"   ");
+}
+for(var i in map.keys()){
+    document.write(i+"："+keys[i]+"  ");
+}
+alert(map.isEmpty());
 */
 function Map() {
     this.keys = new Array();
@@ -55,7 +67,6 @@ function Map() {
 
     /**
      * 遍历Map,执行处理函数
-     *
      * @param {Function} 回调函数 function(key,value,index){..}
      */
     this.each = function(fn){
@@ -70,10 +81,32 @@ function Map() {
     };
 
     /**
+    * 获得Map中的所有Value
+    */
+    this.values=function(){
+        var _values= new Array();
+        for(var key in obj){
+            _values.push(obj[key]);
+        }
+        return _values;
+    };
+
+    /**
+    * 获得Map中的所有Key
+    */
+    this.keys=function(){
+        var _keys = new Array();
+        for(var key in obj){
+            _keys.push(key);
+        }
+        return _keys;
+    };
+
+    /**
      * 获取键值数组
      * @return entity[{key,value},{key,value}]
      */
-    this.entrySet = function() {
+    this.entries = function() {
         var len = this.keys.length;
         var entrys = new Array(len);
         for (var i = 0; i < len; i++) {
@@ -99,6 +132,7 @@ function Map() {
         return this.keys.length;
     };
 
+    /*是否包含指定键*/
     this.containsKey=function(key){
         return this.keys.filter(function(v){
            if(v===key){
@@ -106,6 +140,7 @@ function Map() {
            }
         }).length>0;
     };
+
     /**
      * 重写toString
      */
@@ -121,11 +156,12 @@ function Map() {
         s+="}";
         return s;
     };
+
     /**
      * 解析字符串到Map
      * {a=A,b=B,c=B,}
      */
-    this.parserStringAndAddMap=function(str){
+    this.parse = function(str){
         var count=0;
         if(str && str.length>0){
             str=str.trim();
