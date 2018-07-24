@@ -492,5 +492,7 @@
         <file>Js/map.js</file>
         <file>Controls/Views/PageView/qmldir</file>
         <file>readme.txt</file>
+        <file>Controls/Effectors/TestEffectors.qml</file>
+        <file>Controls/Forms/AnglePicker/TestAnglePicker.qml</file>
     </qresource>
 </RCC>

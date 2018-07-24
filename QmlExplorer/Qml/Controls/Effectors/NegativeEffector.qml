@@ -12,6 +12,6 @@ ShaderEffect {
        varying vec2 qt_TexCoord0;     // 当前点坐标（变量、类型vec2）
        void main() {
            vec4 p = texture2D(source, qt_TexCoord0);       // 当前点色彩值
-           gl_FragColor = vec4(1-p.r, 1-p.g, 1-p.b, p.a) * qt_Opacity;
+           gl_FragColor = vec4(1.0-p.r, 1.0-p.g, 1.0-p.b, p.a) * qt_Opacity;
        }"
 }

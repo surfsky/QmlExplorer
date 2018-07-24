@@ -18,7 +18,7 @@ ShaderEffect {
                vec4 c = texture2D(source, qt_TexCoord0);
                vec4 m = texture2D(mask, qt_TexCoord0);
                //gl_FragColor = vec4(c.rgb, m.a);
-               gl_FragColor = m.a==0 ? vec4(0,0,0,0) : c;
+               gl_FragColor = m.a<0.01 ? vec4(0,0,0,0) : c;
            }
            "
 }

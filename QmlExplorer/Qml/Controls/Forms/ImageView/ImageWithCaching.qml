@@ -11,7 +11,7 @@ import QtQuick.Controls 1.1
 Image {
     width: 100
     height: 100
-    source: "http://qt-project.org/images/qt13a/Qt-logo.png"
+    source: "https://cdn2.hubspot.net/hubfs/149513/Qt2017/qt_logo_with_text_green_rgb.png?t=1532030078207"
 
     onStatusChanged: {
         if (this.status == Image.Loading)

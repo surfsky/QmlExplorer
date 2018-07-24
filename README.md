@@ -62,3 +62,25 @@ It may be some IO limit when dynamic creating qml object from .qrc.
 Should I change all  "import SomeQmlComponent"  code to "import qrc:\xxxxx"? It's a horrible work. 
 Anyone can help me? 
 
+Snapshots
+===========
+
+![](https://github.com/surfsky/QmlExplorer/blob/master/Images/App_Clock.png)
+![](https://github.com/surfsky/QmlExplorer/blob/master/Images/App_Dial.png)
+![](https://github.com/surfsky/QmlExplorer/blob/master/Images/App_ImageCrop.png)
+![](https://github.com/surfsky/QmlExplorer/blob/master/Images/App_Metro.png)
+![](https://github.com/surfsky/QmlExplorer/blob/master/Images/App_Notepad.png)
+![](https://github.com/surfsky/QmlExplorer/blob/master/Images/App_Painter.png)
+![](https://github.com/surfsky/QmlExplorer/blob/master/Images/App_RoundMenu.png)
+![](https://github.com/surfsky/QmlExplorer/blob/master/Images/Effect_genie.png)
+![](https://github.com/surfsky/QmlExplorer/blob/master/Images/Effect_Reflect.png)
+![](https://github.com/surfsky/QmlExplorer/blob/master/Images/Effect_RoundCorner.png)
+![](https://github.com/surfsky/QmlExplorer/blob/master/Images/Effect_Shine.png)
+![](https://github.com/surfsky/QmlExplorer/blob/master/Images/Effect.gif)
+![](https://github.com/surfsky/QmlExplorer/blob/master/Images/Form_AnglePicker.gif)
+![](https://github.com/surfsky/QmlExplorer/blob/master/Images/Form_Charts.png)
+![](https://github.com/surfsky/QmlExplorer/blob/master/Images/Form_ColorPicker.png)
+![](https://github.com/surfsky/QmlExplorer/blob/master/Images/Form_DatePicker.gif)
+![](https://github.com/surfsky/QmlExplorer/blob/master/Images/Gauge_Dial.png)
+
+
